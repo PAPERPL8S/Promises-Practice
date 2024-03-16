@@ -42,7 +42,7 @@ export const handlePromise = (promise) => {
       return resolvedValue;
     },
     (rejectedResponse) => {
-      return 'Uh Oh';
+      return rejectedResponse;
     }
   );
 };
