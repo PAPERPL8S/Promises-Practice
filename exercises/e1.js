@@ -17,7 +17,7 @@ export const logMessageAfterOneSecond = (message) => {
   // use the 'createOneSecondPromise' function, and a `onFulfilled` callback with a `.then` method
   // to log the `message` parameter we pass in after one second
   createOneSecondPromise()
-    .then((resolveMessage) => {
+    .then(() => {
       console.log(message);
     });
 };

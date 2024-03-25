@@ -38,12 +38,8 @@ export const getPromise = (bool) => {
 export const handlePromise = (promise) => {
   // Your code goes here...
   return promise.then(
-    (resolvedValue) => {
-      return resolvedValue;
-    },
-    (rejectedResponse) => {
-      return 'Uh Oh';
-    }
+    (resolvedValue) =>  resolvedValue,
+    () => 'Uh Oh'
   );
 };
 // === TEST YOURSELF ===
