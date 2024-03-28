@@ -3,10 +3,9 @@
  * Please, make sure to read the "09 An-important-rule.md" file in exercises-info folder
  */
 
-
 /**
  * @task
- * Create a function `iterate` that prints the first function argument 
+ * Create a function `iterate` that prints the first function argument
  * (an integer) to it and then returns that argument + 1
  * The function must be exported
  */
@@ -30,7 +29,7 @@ export function alwaysThrows() {
 
 /**
  * @task
- * Create a function `onReject` that 
+ * Create a function `onReject` that
  * * Takes an argument that can be either error object or a string value
  * * Logs the error object message property value in the console if the argument is an object
  * * Logs the argument value in the console in any other case
@@ -39,11 +38,9 @@ export function alwaysThrows() {
 
 export function onReject(arg) {
   // Your code goes here...
-  if (typeof arg === 'object' && arg !== null && arg.hasOwnProperty('message')) {
-    console.log(arg.message);
-  } else {
-    console.log(arg);
-  }
+  const valueToLog = arg.message || arg;
+
+  console.log(valueToLog);
 }
 
 /**
@@ -68,23 +65,19 @@ export function onReject(arg) {
  */
 
 // Your code goes here...
-export const promise = Promise.resolve()
-  .then(() => iterate(1))
-  .then(() => iterate(2))
-  .then(() => iterate(3))
-  .then(() => iterate(4))
-  .then(() => iterate(5))
+export const promise = Promise.resolve(1)
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
   .then(alwaysThrows)
-  .then(() => iterate(6))
-  .then(() => iterate(7))
-  .then(() => iterate(8))
-  .then(() => iterate(9))
-  .then(() => iterate(10))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
   .catch(onReject);
-
-
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"

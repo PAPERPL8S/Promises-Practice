@@ -15,16 +15,12 @@
  * Example: export const getPromise(num) => return <Your code of promise>
  */
 export const getPromise = (arg) => {
-// Your code goes here...
-  return new Promise((resolve) => {
-    if (typeof arg === 'number' && Number.isInteger(arg)) {
+  // Your code goes here...
+  if (typeof arg === "number" && Number.isInteger(arg)) {
+    return new Promise((resolve) => {
       resolve(arg);
-    } else if (typeof arg === 'string' || !Number.isInteger(arg)) {
-      resolve(0);
-    } else {
-      resolve(0);
-    }
-  });
+    });
+  } else return 0;
 };
 
 /**
@@ -39,21 +35,13 @@ export const getPromise = (arg) => {
  * * if you have solved it successfully, the updateSumValue() function will return the value of 10;
  */
 
-
-export const updateSumValue = async () => {
+export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
-  sum += await getPromise(120).then(value => value);
+  getPromise(120).then((value) => value);
   sum += 8;
   return sum;
 };
-
-async () => {
-    const result = await updateSumValue();
-    expect(result).toBe(10);
-  };
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file

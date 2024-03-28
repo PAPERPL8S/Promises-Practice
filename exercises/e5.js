@@ -10,7 +10,7 @@
 
 export const attachTitle = (arg) => {
   // Your code goes here...
-  return 'DR. ' + arg;
+  return "DR. " + arg;
 };
 
 /**
@@ -23,19 +23,13 @@ export const attachTitle = (arg) => {
 
 export const getPromise = () => {
   // Your code goes here...
-  return Promise.resolve('MANHATTAN')
+  return Promise.resolve("MANHATTAN")
     .then(attachTitle)
-    .then(result => {
+    .then((result) => {
       console.log(result);
       return result;
     });
 };
-  
-  getPromise().then(returnedValue => {
-    console.log("Returned value:", returnedValue);
-  });
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"
 // If the test has all tests passed, switch to the next exercise file
